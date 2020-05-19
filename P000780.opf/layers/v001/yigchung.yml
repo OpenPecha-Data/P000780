@@ -2,9 +2,9 @@ id: 92a7cc3769fa42d4be7597d2dfd252dc
 annotation_type: yigchung
 revision: '00001'
 annotations:
-- id: 7b57ff48276f48b785cdff3e421ceeab
-  span:
-    start: 974
-    end: 1013
+  7b57ff48276f48b785cdff3e421ceeab:
+    span:
+      start: 974
+      end: 1013
 tofu-maps:
   𘚫: 7b57ff48276f48b785cdff3e421ceeab
