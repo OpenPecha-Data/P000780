@@ -1,0 +1,8 @@
+id: 53f31ed3690d4f0cafc1247b106d8f9e
+annotation_type: yigchung
+revision: '00001'
+annotations:
+- id: 1c4835f72993451ea00e68b98b0ec839
+  span:
+    start: 974
+    end: 1013
