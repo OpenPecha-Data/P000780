@@ -2,14 +2,14 @@
   
 ## Downloads and Edit Online
 
-- **Publication View** [![](https://img.icons8.com/color/18/000000/edit.png) ![](https://img.icons8.com/color/18/000000/layers.png)](http://prose.io/#OpenPecha/P000782/) `base + 1-toc + 2-pagination_bo + 3-correction`
+- **Publication View** [![](https://img.icons8.com/color/18/000000/edit.png) ![](https://img.icons8.com/color/18/000000/layers.png)](http://prose.io/#OpenPecha/P000780/) `base + 1-toc + 2-pagination_bo + 3-correction`
     - [![](https://img.icons8.com/color/24/000000/txt.png) Plain text (.txt)](https://github.com/OpenPecha/P000780/releases/download/v02/blo_sbyong_tshig_rkang_brgyad_ma-v001.txt)
     - [![](https://img.icons8.com/color/24/000000/markdown.png) Markdown (.md)](link)
     - [![](https://img.icons8.com/color/24/000000/epub.png) Epub (.epub)](link)
     - [![](https://img.icons8.com/color/24/000000/microsoft-word-2019.png) Word (.docx)](link)
 
 
-- **Diplomatic View** [![](https://img.icons8.com/color/18/000000/edit.png) ![](https://img.icons8.com/color/18/000000/layers.png)](http://prose.io/#OpenPecha/P000782/tree/diplomatic) `base + 2-pagination_bo + 4-uncertain`
+- **Diplomatic View** [![](https://img.icons8.com/color/18/000000/edit.png) ![](https://img.icons8.com/color/18/000000/layers.png)](http://prose.io/#OpenPecha/P000780/tree/diplomatic) `base + 2-pagination_bo + 4-uncertain`
     - [![](https://img.icons8.com/color/24/000000/markdown.png) Markdown (.md)](link)
 
 
