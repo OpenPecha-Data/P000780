@@ -7,17 +7,11 @@
     - [![](https://img.icons8.com/color/24/000000/markdown.png) Markdown (.md)](link)
     - [![](https://img.icons8.com/color/24/000000/epub.png) Epub (.epub)](link)
     - [![](https://img.icons8.com/color/24/000000/microsoft-word-2019.png) Word (.docx)](link)
-    - layers:
-        - toc
-        - page # page-index in boyig
-        - correction
+
 
 - **Diplomatic View** [![](https://img.icons8.com/color/18/000000/edit.png) ![](https://img.icons8.com/color/18/000000/layers.png)](http://prose.io/#OpenPecha/P000782/tree/diplomatic) `base + 2-pagination_bo + 4-uncertain`
     - [![](https://img.icons8.com/color/24/000000/markdown.png) Markdown (.md)](link)
 
-    - layers:
-        - page # page-index in boyig
-        - uncertain
 
 ## Edit
 
