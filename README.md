@@ -22,7 +22,7 @@ _Note: for large files use [FireFox ![](https://img.icons8.com/color/16/000000/f
 - Create a view by typing: `<cmd command>`
 - Save and upload by typing: `<cmd command>`
 
-_Detailed [tutorial ![](https://img.icons8.com/color/16/000000/classroom.png)](link)_
+_[Tutorial ![](https://img.icons8.com/color/16/000000/classroom.png)](link)_
 
 
 ## .opf
