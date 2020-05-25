@@ -2,7 +2,7 @@ name: Update annotations
 
 on:
   push:
-    branches: [ publication ]
+    branches: [ master ]
 
 jobs:
   # format HFML files and upload the opf artifac
