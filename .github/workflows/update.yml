@@ -7,14 +7,14 @@ on:
 jobs:
   # format HFML files and upload the opf artifac
   format:
-    if: ( github.event.commits[0].message == 'merge' ) && ( github.actor == '10zinten' )
+    #if: ( github.event.commits[0].message == 'merge' ) && ( github.actor == '10zinten' )
     runs-on: ubuntu-latest
     steps:
-#       - name: Setup tmate session
-#         uses: mxschmitt/action-tmate@v2
       - uses: actions/checkout@v2
         with:
           ref: publication
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v2
       - name: Format HFML
         run: |
           loc=$(pwd)
