@@ -3,8 +3,101 @@ annotation_type: index
 revision: '00001'
 annotations:
   abff11b6e75749948dd2fd97de42c768:
+  part_of: 
+  parts: 
     span:
       - vol: base/v001
         span:
           start: 0
           end: 1013
+      - vol: base/v002
+        span:
+          start: 230
+          end: 4578
+          
+uuid: AAA
+  part_of:
+  parts: BBA, BBD, BBC, BBD
+  type: section
+uuid: BBA
+  part_of: AAA
+  parts: CCA, CCB, CCC, CCD
+  type: section
+  span:
+    - base/v001:
+        start: 345
+        end: 7654
+    - base/v002:
+        start: 23
+        end: 7655
+uuid: CCA
+...
+uuid: CCB
+  part_of: BBA
+  parts: DDA, DDB
+  type: text
+  title: chojuk
+  work: W000345
+  span:
+    - base/v001:
+        start: 5677
+        end: 7654
+    - base/v002:
+        start: 23
+        end: 7655
+uuid: DDA
+  part_of: CCB
+  type: chapter
+  title: 
+  span:
+    - base/v001:
+        start: 5677
+        end: 6854
+uuid: DDB
+  part_of: CCB
+  type: chapter
+  bdrc_o: ####
+  title:
+  span:
+    - base/v001:
+        start: 6900
+        end: 7060
+uuid: DDC
+  part_of: CCB
+  type: unidentified
+  title:
+  span:
+    - base/v001:
+        start: 7061
+        end: 7654
+    - base/v002:
+        start: 23
+        end: 7655        
+ 
+
+work:
+  author:
+    name: zhi ba lha
+    dates: 
+  titles:
+    chojuk
+    chojuk chenmo
+    jangsemchojug
+  instances:
+    P000780/DDA:
+        title: chojug chenmo
+        edition: working
+        publisher: derge
+        language: bo
+    P000780/DDA:
+        title: chojug chenmo
+        publisher: derge
+        language: bo
+    P000789/DUA:
+        title: chojuk
+        publisher: tashijong
+        language: bo
+
+     
+  
+  
