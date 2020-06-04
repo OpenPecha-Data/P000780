@@ -10,8 +10,6 @@
 <iframe src="https://prose.io/#OpenPecha/P000780/edit/publication/v001.txt" width="100%" height="600"></iframe>
 </blockquote></details>
 
-<iframe src="https://296511666145.ngrok.io/" width="100%" height="600"></iframe>
-
 _Note: to export custom files, write the format and annotations you need in the commit message. For example `export epub t+c` or `epub toc+correction`. To edit large files use [FireFox ![](https://img.icons8.com/color/16/000000/firefox.png)](https://www.mozilla.org/)_
 
 ### Downloads <img src="https://img.icons8.com/cotton/20/000000/download-from-cloud.png">
