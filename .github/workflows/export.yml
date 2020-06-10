@@ -1,0 +1,5 @@
+name: Export OPF
+
+on:
+  issue:
+    branches: [ opened ]
