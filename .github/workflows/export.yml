@@ -1,6 +1,6 @@
 name: Export OPF
 
-on:
+on: 
   issues:
     types: [opened]
     
@@ -9,26 +9,28 @@ jobs:
 #     if: github,event.issue.labels[0].name == "export"
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - name: Test
+        run: echo "export testing"
+#       - uses: actions/checkout@v2
     
-      - name: Set up Python
-        uses: actions/setup-python@v1
-        with:
-          python-version: 3.6
+#       - name: Set up Python
+#         uses: actions/setup-python@v1
+#         with:
+#           python-version: 3.6
           
-      - name: install openpecha
-        run: pip3 install openpecha
+#       - name: install openpecha
+#         run: pip3 install openpecha
       
-      - name: Export the opf
-        run: |
-          import os
-          issue_body = os.getenv('ISSUE_BODY')
-          layers, format = issue_body.splitlines()
-          pwd = os.getcwd()
-          repo_name = pwd.split('/')[-1]
-          opf_path = f'{repo_name}/{repo_name}.opf'
-          print(opf_path, layers, format)
-          os.system(f'openpecha export -l {layers} -f {format} {opf_path}')
-        shell: python
-        env:
-          ISSUE_BODY: ${{ github.event.issue.body }}
+#       - name: Export the opf
+#         run: |
+#           import os
+#           issue_body = os.getenv('ISSUE_BODY')
+#           layers, format = issue_body.splitlines()
+#           pwd = os.getcwd()
+#           repo_name = pwd.split('/')[-1]
+#           opf_path = f'{repo_name}/{repo_name}.opf'
+#           print(opf_path, layers, format)
+#           os.system(f'openpecha export -l {layers} -f {format} {opf_path}')
+#         shell: python
+#         env:
+#           ISSUE_BODY: ${{ github.event.issue.body }}
