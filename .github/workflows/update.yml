@@ -7,7 +7,6 @@ on:
 jobs:
   # format HFML files and upload the opf artifac
   format:
-    if: ( github.event.commits[0].message == 'merge' ) && ( github.actor == secrets.MAINTAINER )
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
