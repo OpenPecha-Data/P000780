@@ -12,8 +12,8 @@ jobs:
       - uses: actions/checkout@v2
         with:
           ref: publication
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v2
+#       - name: Setup tmate session
+#         uses: mxschmitt/action-tmate@v2
       - name: Format HFML
         run: |
           loc=$(pwd)
