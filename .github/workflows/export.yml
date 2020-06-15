@@ -6,7 +6,7 @@ on:
     
 jobs:
   export_opf:
-    if: github.event.issue.labels[0].name == "export"
+    if: (github.event.issue.labels[0].name == 'export')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
