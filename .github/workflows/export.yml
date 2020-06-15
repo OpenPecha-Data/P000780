@@ -27,7 +27,6 @@ jobs:
           pwd = os.getcwd()
           repo_name = pwd.split('/')[-1]
           opf_path = f'{repo_name}/{repo_name}.opf'
-          print(opf_path, layers, format)
           os.system(f'openpecha export -l {layers} -f {format} {opf_path}')
         shell: python
         env:
