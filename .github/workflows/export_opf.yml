@@ -5,7 +5,7 @@ on:
     types: [opened]
     
 jobs:
-  export:
+  export_opf:
 #     if: github,event.issue.labels[0].name == "export"
     runs-on: ubuntu-latest
     steps:
