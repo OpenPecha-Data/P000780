@@ -1,12 +1,13 @@
-name: Update annotations
+name: Update OPF
 
-on:
-  pull_request:
-    branches: [ master ]
+on: 
+  issues:
+    types: [opened]
 
 jobs:
-  # format HFML files and upload the opf artifac
+  # format HFML files and upload the opf artifact
   format:
+    if: (github.event.issue.labels[0].name == 'update')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -18,15 +19,13 @@ jobs:
         run: |
           loc=$(pwd)
           repo_name=${loc##*/}
-          echo ${{ secrets.MAINTAINER }}
           # TODO: to be replaced by real formatter
-          msg='Third update from publication'
-          mkdir -p $repo_name.opf/layers/v001/
+          msg='update from publication with created by onwer'
+          mkdir -p $repo_name.opf/layers/v002/
           mkdir -p $repo_name.opf/base
-          touch $repo_name.opf/layers/v001/pagination.yml
-          echo $msg >> $repo_name.opf/layers/v001/pagination.yml
-          echo $msg >> $repo_name.opf/base/v001.txt
-          echo $msg >> $repo_name.opf/index.yml
+          echo $msg >> $repo_name.opf/layers/v002/pagination.yml
+          echo $msg >> $repo_name.opf/base/v002.txt
+          echo $msg >> $repo_name.opf/index2.yml
           
           mkdir formatted && mv $repo_name.opf formatted/
       - uses: actions/upload-artifact@v2
