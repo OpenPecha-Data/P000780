@@ -2,7 +2,7 @@ name: Export OPF
 
 on: 
   issues:
-    types: [opened]
+    types: [opened, edited]
     
 jobs:
   export_opf:
