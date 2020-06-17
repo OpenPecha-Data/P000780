@@ -34,7 +34,7 @@ annotations:
     span:
       start: 850
       end: 972
-tofu-maps:
+local-id2uuid:
   𘚫: 7e065974bbd845ba81b8deda69ff4eab
   𘚬: e43745b814bf4602b7e7dc3e92bb15ae
   𘚭: 41e3087901bf47c986063df35f961f9a
