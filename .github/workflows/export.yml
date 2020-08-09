@@ -31,3 +31,7 @@ jobs:
         shell: python
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
+      - name: Creat release
+        run: |
+          //
+        shell: python
