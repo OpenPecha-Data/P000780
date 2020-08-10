@@ -33,5 +33,9 @@ jobs:
           ISSUE_BODY: ${{ github.event.issue.body }}
       - name: Creat release
         run: |
-          //
+          from pathlib import Path
+          from openpecha.github_utils import create_release
+          
+          pecha_num = Path.cwd().name
+          create_release(pecha_num, Path('./assets).iterdir())
         shell: python
