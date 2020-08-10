@@ -34,7 +34,7 @@ jobs:
         shell: python
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-      - name: Creat release
+      - name: Upload export to the latest release
         run: |
           from pathlib import Path
           from openpecha.github_utils import add_assets_to_latest_release
