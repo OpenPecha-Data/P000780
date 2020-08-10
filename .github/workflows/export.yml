@@ -34,8 +34,8 @@ jobs:
       - name: Creat release
         run: |
           from pathlib import Path
-          from openpecha.github_utils import create_release
+          from openpecha.github_utils import add_assets_to_latest_release
           
           pecha_num = Path.cwd().name
-          create_release(pecha_num, Path('./assets).iterdir())
+          add_assets_to_latest_release(pecha_num, Path('./exports).iterdir())
         shell: python
