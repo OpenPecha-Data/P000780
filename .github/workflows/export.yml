@@ -40,5 +40,6 @@ jobs:
           from openpecha.github_utils import add_assets_to_latest_release
           
           pecha_num = Path.cwd().name
-          add_assets_to_latest_release(pecha_num, Path('./exports).iterdir())
+          exports_path = Path("./exports")
+          add_assets_to_latest_release(pecha_num, exports_path.iterdir() if exports_path.is_dir() else [])
         shell: python
