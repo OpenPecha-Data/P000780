@@ -12,3 +12,8 @@ jobs:
           ref: master
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v2
+      
+      - name: Install calibre
+        run: |
+          sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+          ebook-convert --version
