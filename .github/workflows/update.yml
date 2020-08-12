@@ -5,78 +5,51 @@ on:
     types: [opened]
 
 jobs:
-  # format HFML files and upload the opf artifact
   format:
     if: (github.event.issue.labels[0].name == 'update')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: publication
-          fetch-depth: 2
+          ref: master
 #       - name: Setup tmate session
 #         uses: mxschmitt/action-tmate@v2
-      - name: Format HFML
+      
+      - name: Install openpecha-toolkit
+        run: pip install openpecha
+      
+      - name: Clone publication branch and Format
         run: |
+          # Get Pecha Id
           loc=$(pwd)
           repo_name=${loc##*/}
-          # TODO: to be replaced by real formatter
-          msg='update from publication with created by onwer'
-          mkdir -p $repo_name.opf/layers/v002/
-          mkdir -p $repo_name.opf/base
-          echo $msg >> $repo_name.opf/layers/v002/pagination.yml
-          echo $msg >> $repo_name.opf/base/v002.txt
-          echo $msg >> $repo_name.opf/index2.yml
           
-          mkdir formatted && mv $repo_name.opf formatted/
-      - uses: actions/upload-artifact@v2
-        with:
-          name: opf
-          path: formatted/
+          # Clone publication branch
+          git clone --depth 1 -b publication https://github.com/OpenPecha/$repo_name.git
+          
+          # Format with HFMLFormatter
+          openpecha format -i $repo_name -o ../../
+        shell: bash
         
-  update:
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.opf
+          git commit -m "Update pecha"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+        
+  release:
     needs: format
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           ref: master
-          fetch-depth: 2
-      - uses: actions/download-artifact@master
-        with: 
-          name: opf
-          path: formatted
-      - name: update base and layer
-        run: |
-          loc=$(pwd)
-          repo_name=${loc##*/}
-          mv $repo_name.opf/meta.yml ./
-          rm -rf $repo_name.opf
-          mv formatted/* ./
-          mv meta.yml $repo_name.opf/
-          rm -rf formatted
-      - name: Commit changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git commit -m "Update pecha" -a
-      - name: Push changes
-        uses: ad-m/github-push-action@master
-        with:
-           github_token: ${{ secrets.GITHUB_TOKEN }}
-           
-      - uses: geekyeggo/delete-artifact@v1
-        with:
-          name: opf
-        
-  release:
-    needs: update
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: master
-          fetch-depth: 2
+          fetch-depth: 1
       - name: Install openpecha
         run: pip install openpecha
       - name: Create opf release
