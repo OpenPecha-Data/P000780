@@ -28,7 +28,11 @@ jobs:
           git clone --depth 1 -b publication https://github.com/OpenPecha/$repo_name.git
           
           # Format with HFMLFormatter
-          openpecha format -i $repo_name -o ../../
+          # Runner directory structure
+          # - pwd -> ~/work/P######/P######
+          # - opf_path -> pwd / P######.opf
+          # - publication branch clone -> pwd / P######/
+          openpecha format -i $repo_name -o ~/work/$repo_name ./$repo_name
         shell: bash
         
       - name: Commit changes
@@ -50,8 +54,10 @@ jobs:
         with:
           ref: master
           fetch-depth: 1
+      
       - name: Install openpecha
         run: pip install openpecha
+      
       - name: Create opf release
         run: |
           from pathlib import Path
