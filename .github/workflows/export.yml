@@ -19,9 +19,14 @@ jobs:
         with:
           python-version: 3.6
           
+      - name: Install calibre
+        run: |
+          sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+          ebook-convert --version
+      
       - name: install openpecha
         run: pip3 install openpecha
-      
+    
       - name: Export the opf
         run: |
           import os
@@ -30,7 +35,7 @@ jobs:
           pwd = os.getcwd()
           repo_name = pwd.split('/')[-1]
           opf_path = f'{repo_name}/{repo_name}.opf'
-          os.system(f'openpecha export -l {layers} -f {format} {opf_path}')
+          os.system(f'openpecha export -op {opf_path}')
         shell: python
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
