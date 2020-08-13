@@ -51,7 +51,7 @@ jobs:
           exports_path.mkdir()
           
           # Export opf
-          os.system(f"openpecha export -op {opf_path} -o {exports_path}")
+          os.system(f"openpecha export -n epub -op {opf_path} -o {exports_path}")
         shell: python
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
