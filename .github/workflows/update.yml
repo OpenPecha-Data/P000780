@@ -52,24 +52,73 @@ jobs:
         uses: ad-m/github-push-action@master
         with:
            github_token: ${{ secrets.GITHUB_TOKEN }}
-        
-  release:
-    needs: format
+         
+  create-hfml-view:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
-          ref: master
-          fetch-depth: 1
+          ref: publication
+#       
+#       - name: Setup tmate session
+#         uses: mxschmitt/action-tmate@v2
       
-      - name: Install openpecha
-        run: pip install openpecha
+      - name: Set up Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.6
       
-      - name: Create opf release
+      - name: Install openpecha-toolkit
+        run: pip3 install openpecha
+      
+      - name: Clone opf and serialize it
         run: |
-          from pathlib import Path
-          from openpecha.github_utils import create_release
+          # Get Pecha Id
+          loc=$(pwd)
+          repo_name=${loc##*/}
           
-          pecha_num = Path.cwd().name
-          create_release(pecha_num)
-        shell: python
+          # Clone opf master branch
+          git clone --depth 1 https://github.com/OpenPecha/$repo_name.git
+          rm -rf $repo_name/.git
+          
+          # Serialize with HFMLSerializer
+          # Runner directory structure
+          # - pwd -> ~/work/P######/P######
+          # - opf_path -> pwd / P###### / P######.opf
+          # - publictaion path -> pwd
+          $pwd=~/work/$repo_name/$repo_name
+          $opf_path=$pwd/$repo_name/$repo_name.opf/
+          openpecha export -op $opf_path -o $pwd
+        shell: bash
+        
+      - name: Commit changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add *.opf
+          git commit -m "Update pecha"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+           github_token: ${{ secrets.GITHUB_TOKEN }}
+        
+#   release:
+#     needs: format
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#         with:
+#           ref: master
+#           fetch-depth: 1
+      
+#       - name: Install openpecha
+#         run: pip install openpecha
+      
+#       - name: Create opf release
+#         run: |
+#           from pathlib import Path
+#           from openpecha.github_utils import create_release
+          
+#           pecha_num = Path.cwd().name
+#           create_release(pecha_num)
+#         shell: python
