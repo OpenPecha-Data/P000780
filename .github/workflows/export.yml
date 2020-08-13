@@ -38,7 +38,7 @@ jobs:
           
           # get pecha id and opf path
           repo_name = Path.cwd().name
-          opf_path = Path.cwd().resolve() / f"{repo_name}" / f"{repo_name}.opf"
+          opf_path = Path.cwd().resolve() / f"{repo_name}.opf"
           
           # Prepare exports directory
           exports_path = Path("./exports/").resolve()
