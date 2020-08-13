@@ -31,7 +31,7 @@ jobs:
         run: |
           mkdir /usr/share/fonts/truetype/monlam
           wget https://github.com/OpenPecha/ebook-template/raw/master/MonlamUniOuChan2.ttf
-          mv MonlamUniOuChan2.ttf /usr/share/fonts/truetype/monlam
+          mv MonlamUniOuChan2.ttf /usr/share/fonts/truetype/monlam/
           
       - name: Export the opf
         run: |
