@@ -55,12 +55,20 @@ jobs:
         shell: python
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
-      - name: Upload export to the latest release
-        run: |
-          from pathlib import Path
-          from openpecha.github_utils import add_assets_to_latest_release
           
-          pecha_num = Path.cwd().name
-          exports_path = Path("./exports")
-          add_assets_to_latest_release(pecha_num, exports_path.iterdir() if exports_path.is_dir() else [])
-        shell: python
+      - name: Upload export to the latest release
+        uses: svenstaro/upload-release-action@v2
+        with:
+          repo_token: ${{ secrets.GITHUB_TOKEN }}
+          file: ./exports/P*
+          tag: latest
+          overwrite: true
+          file_glob: true
+#           run: |
+#           from pathlib import Path
+#           from openpecha.github_utils import add_assets_to_latest_release
+          
+#           pecha_num = Path.cwd().name
+#           exports_path = Path("./exports")
+#           add_assets_to_latest_release(pecha_num, exports_path.iterdir() if exports_path.is_dir() else [])
+#         shell: python
