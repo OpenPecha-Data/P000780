@@ -32,6 +32,7 @@ jobs:
           
           # Clone publication branch
           git clone --depth 1 -b publication https://github.com/OpenPecha/$repo_name.git
+          rm -rf $repo_name/.git
           
           # Format with HFMLFormatter
           # Runner directory structure
