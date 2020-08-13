@@ -1,0 +1,11 @@
+id: 604d0df788744fae94a94a33e49991ad
+annotation_type: Correction
+revision: '00001'
+annotations:
+  3e361b6f033b4da2a16aa71a969ec5fc:
+    correction: ཐག་
+    span:
+      start: 219
+      end: 221
+local_ids:
+  3e361b6f033b4da2a16aa71a969ec5fc: 200000
