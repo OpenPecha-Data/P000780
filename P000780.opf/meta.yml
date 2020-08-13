@@ -3,3 +3,8 @@ ebook_metadata:
   authors:
     - དགེ་བཤེས་ཆེན་པོ་གླང་རི་ཐང་
   cover: 605944.jpg
+  layers:
+    - BookTitle
+    - Correction
+    - Tsawa
+    - Yigchung 
