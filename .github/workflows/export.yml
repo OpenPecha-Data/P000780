@@ -30,12 +30,22 @@ jobs:
       - name: Export the opf
         run: |
           import os
+          from pathlib import Path
+          
+          # Get layer and format to be exported into
           issue_body = os.getenv('ISSUE_BODY')
           layers, format = issue_body.splitlines()
-          pwd = os.getcwd()
-          repo_name = pwd.split('/')[-1]
+          
+          # get pecha id and opf path
+          repo_name = Path.cwd().name
           opf_path = f'{repo_name}/{repo_name}.opf'
-          os.system(f'openpecha export -op {opf_path}')
+          
+          # Prepare exports directory
+          exports_path = Path('./exports/)
+          exports_path.mkdir()
+          
+          # Export opf
+          os.system(f'openpecha export -op {opf_path} -o {exports_path}')
         shell: python
         env:
           ISSUE_BODY: ${{ github.event.issue.body }}
