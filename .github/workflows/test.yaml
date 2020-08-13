@@ -1,16 +1,16 @@
-name: Test
+# name: Test
 
-on: 
-  push
+# on: 
+#   push
 
-jobs:
-  format:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          ref: master
-          fetch-depth: 0
-      - name: Setup tmate session
-        uses: mxschmitt/action-tmate@v2
+# jobs:
+#   format:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v2
+#         with:
+#           ref: master
+#           fetch-depth: 0
+#       - name: Setup tmate session
+#         uses: mxschmitt/action-tmate@v2
         
