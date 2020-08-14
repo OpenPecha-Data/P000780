@@ -1,11 +1,11 @@
-id: 604d0df788744fae94a94a33e49991ad
+id: 2343649b18444543bcb159b720286747
 annotation_type: Correction
-revision: '00002'
+revision: '00001'
 annotations:
-  aaef91c08531447cbf5aa7b0c611bba8:
+  06c5910195534faebdfa8b0a55aa7671:
     correction: ཐག་
     span:
       start: 219
       end: 221
 local_ids:
-  3e361b6f033b4da2a16aa71a969ec5fc: 200000
+  06c5910195534faebdfa8b0a55aa7671: 200000
