@@ -1,10 +1,12 @@
 ebook_metadata:
   title: བློ་སྦྱོང་ཚིག་རྐང་བརྒྱད་མ་
   authors:
-    - དགེ་བཤེས་ཆེན་པོ་གླང་རི་ཐང་
+  - དགེ་བཤེས་ཆེན་པོ་གླང་རི་ཐང་
   cover: 605944.jpg
   layers:
-    - BookTitle
-    - Correction
-    - Tsawa
-    - Yigchung 
+  - BookTitle
+  - Correction
+  - Tsawa
+  - Yigchung
+vol2fn:
+  v001: v001.txt
