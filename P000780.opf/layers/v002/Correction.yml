@@ -1,11 +1,11 @@
 id: 7fe6ca4a450746ccb7f8cef96ff0ff9f
 annotation_type: Correction
-revision: '00001'
+revision: '00002'
 annotations:
   165b3b68127b448eb39245069186bffb:
     correction: ཐག་
     span:
-      start: 227
-      end: 229
+      start: 222
+      end: 224
 local_ids:
   165b3b68127b448eb39245069186bffb: 200000
